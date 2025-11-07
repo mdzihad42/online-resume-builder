@@ -1,0 +1,15 @@
+ <div class="sidebar">
+    {% if request.user.profile_info.profile_pic %}
+      <img src="{{ request.user.profile_info.profile_pic.url }}" alt="Profile Picture" class="sidebar-pic">
+    {% else %}
+      <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Default Profile" class="sidebar-pic">
+    {% endif %}
+    <h2>{{ request.user.profile_info.full_name }}</h2>
+    <hr class="sidebar-line">
+
+    <a href="{% url 'homePage' %}">🏠 Home</a>
+    <a href="{% url 'addDetails' %}">📝 Add Details</a>
+    <a href="{% url 'update' %}">👤 Profile</a>
+    <a href="{% url 'registerPage' %}">📝 Register</a>
+    <a href="{% url 'logoutPage' %}">🚪 Logout</a>
+  </div>
